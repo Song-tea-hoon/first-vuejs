@@ -1,11 +1,13 @@
 <html>
     <head>
-        <title>최초의 Vue.js</title>
+        <meta charset="UTF-8">
+        <title>인터폴레이션</title>
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     </head>
     <body>
         <div id="app">
-            {{message}}
+            <p>Using mustaches: {{ rawHtml }}</p>
+            <p>Using v-html directive: <span v-html="rawHtml"></span></p>
         </div>
     
     </body>
@@ -13,7 +15,7 @@
         var app = new Vue({
             el:'#app',
             data:{
-                message:'안녕하세요 Vue'
+                rawHtml:'<span style="color:red">안녕하세요 Vue</span>'
             }
         });
 
