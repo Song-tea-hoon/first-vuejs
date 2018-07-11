@@ -26,6 +26,11 @@
                 </li>
             </ol>
         </div>
+
+        <div id="app-6">
+            <p>{{message}}</p>
+            <button v-on:click="reverseMessage">메시지 뒤집기</button>
+        </div>
     </body>
     <script>
         var app = new Vue({
@@ -64,6 +69,18 @@
                     { text: 'Vue 배우기' },
                     { text: '무언가 멋진 것을 만들기' }
                 ]
+            }
+        });
+
+        var app6 = new Vue({
+            el: '#app-6',
+            data: {
+                message:'이 메시지는 뒤집어집니다!'
+            },
+            methods: {
+                reverseMessage: function(){
+                    this.message = this.message.split('').reverse().join('');
+                }
             }
         })
     </script>
