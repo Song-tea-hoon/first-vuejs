@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>v-if</title>
+        <link rel="stylesheet" href="./css/defult.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    </head>
+    <body>
+        <div class="sequence">
+            <h1>v-if</h1>
+        </div>
+        <div id="app">
+            <h1 v-if="ok">Yes</h1>
+            <h1 v-else>No</h1>
+        </div>
+
+        <div class="sequence">
+            <h1>v-if group</h1>
+        </div>
+        <div id="app-2">
+            <template v-if="ok">
+                <h1>Title</h1>
+                <p>Paragraph 1</p>
+                <p>Paragraph 2</p>
+            </template>
+        </div>
+
+        <div class="sequence">
+            <h1>v-if group</h1>
+        </div>
+        <div id="app-3">
+            <div v-if="Math.random() > 0.5">이제 나를 볼 수 있어요</div>
+            <div v-else>이제는 안보입니다</div>
+        </div>
+    </body>
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                ok: true
+            }
+        });
+
+        var app2 = new Vue({
+            el: '#app-2',
+            data: {
+                ok: true
+            }
+        });
+    </script>
+</html>
