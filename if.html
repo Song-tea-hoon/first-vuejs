@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>v-if</title>
+        <title>v-if/v-show</title>
         <link rel="stylesheet" href="./css/defult.css">
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     </head>
@@ -26,11 +26,28 @@
         </div>
 
         <div class="sequence">
-            <h1>v-if group</h1>
+            <h1>v-else</h1>
         </div>
         <div id="app-3">
             <div v-if="Math.random() > 0.5">이제 나를 볼 수 있어요</div>
             <div v-else>이제는 안보입니다</div>
+        </div>
+
+        <div class="sequence">
+            <h1>v-else-if</h1>
+        </div>
+        <div id="app-4">
+            <div v-if="type === 'A'">A</div>
+            <div v-else-if="type === 'B'">B</div>
+            <div v-else-if="type === 'C'">C</div>
+            <div v-else>Not A/B/C</div>
+        </div>
+
+        <div class="sequence">
+            <h1>v-show</h1>
+        </div>
+        <div id="app-5">
+            <div v-show="ok">안녕하세요!</div>
         </div>
     </body>
     <script>
@@ -47,5 +64,23 @@
                 ok: true
             }
         });
+
+        var app3 = new Vue({
+            el: '#app-3'
+        });
+
+        var app4 = new Vue({
+            el: '#app-4',
+            data:{
+                type: 'A'
+            }
+        });
+
+        var app5 = new Vue({
+            el: '#app-5',
+            data: {
+                ok: true
+            }
+        })
     </script>
 </html>
