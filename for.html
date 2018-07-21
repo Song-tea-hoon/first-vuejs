@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>v-for</title>
+        <link rel="stylesheet" href="./css/defult.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    </head>
+    <body>
+        <div class="sequence">
+            <h1>v-for</h1>
+        </div>
+        <div id="app">
+            <ul>
+                <li v-for="item in items">
+                    {{item.message}}
+                </li>
+            </ul>
+        </div>
+
+        <div class="sequence">
+            <h1>v-for arguments</h1>
+        </div>
+        <div id="app-2">
+            <ul>
+                items
+                <li v-for="(item, index) in items">
+                    {{index  + ') ' + item.message}}
+                </li>
+            </ul>
+            <ul>
+                objects
+                <li v-for="(value, key, index) in objects">
+                    {{ index + ') '+key +' : '+value }}
+                </li>
+            </ul>
+        </div>
+    </body>
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                items: [
+                    { message: 'message-0' },
+                    { message: 'message-1' },
+                    { message: 'message-2' }
+                ]
+            }
+        });
+
+        var app2 = new Vue({
+            el: '#app-2',
+            data:{
+                items: [
+                    { message: 'message-0' },
+                    { message: 'message-1' },
+                    { message: 'message-2' }
+                ],
+                objects: {
+                    message: 'message-0',
+                    message1: 'message-1',
+                    message2: 'message-2'
+                }
+            }
+        });
+    </script>
+</html>
